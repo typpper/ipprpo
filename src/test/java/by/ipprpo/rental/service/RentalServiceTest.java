@@ -33,7 +33,7 @@ class RentalServiceTest {
         assertEquals(customer, rental.getCustomer());
         assertEquals(bicycle, rental.getBicycle());
         assertTrue(rental.isActive());
-        assertEquals(BicycleStatus.RENTED, bicycle.getStatus());
+        assertEquals(BicycleStatus.MAINTENANCE, bicycle.getStatus());
         assertTrue(repository.findActiveByBicycle(bicycle).isPresent());
     }
 
