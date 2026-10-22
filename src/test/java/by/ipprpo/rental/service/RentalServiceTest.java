@@ -61,4 +61,33 @@ class RentalServiceTest {
 
         assertEquals("Велосипед находится на обслуживании", exception.getMessage());
     }
+        @Test
+    void testReturnBicycleSuccess() {
+        Customer customer = new Customer(1, "Иван");
+        Bicycle bicycle = new Bicycle(101, "Stels", BicycleStatus.AVAILABLE);
+
+        Rental rental = service.createRental(customer, bicycle);
+        assertEquals(BicycleStatus.RENTED, bicycle.getStatus());
+
+        service.returnBicycle(rental);
+
+        assertFalse(rental.isActive());
+        assertNotNull(rental.getEndTime());
+        assertEquals(BicycleStatus.AVAILABLE, bicycle.getStatus());
+        assertTrue(repository.findActiveByBicycle(bicycle).isEmpty());
+    }
+
+    @Test
+    void testReturnBicycleAlreadyReturned() {
+        Customer customer = new Customer(1, "Иван");
+        Bicycle bicycle = new Bicycle(101, "Stels", BicycleStatus.AVAILABLE);
+
+        Rental rental = service.createRental(customer, bicycle);
+        service.returnBicycle(rental);
+
+        IllegalStateException exception = assertThrows(IllegalStateException.class,
+                () -> service.returnBicycle(rental));
+
+        assertEquals("Аренда уже завершена", exception.getMessage());
+    }
 }
