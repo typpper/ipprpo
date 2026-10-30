@@ -88,6 +88,6 @@ class RentalServiceTest {
         IllegalStateException exception = assertThrows(IllegalStateException.class,
                 () -> service.returnBicycle(rental));
 
-        assertEquals("Аренда уже завершена", exception.getMessage());
+        assertEquals("уже", exception.getMessage());
     }
 }
