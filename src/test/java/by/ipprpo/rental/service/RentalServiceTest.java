@@ -61,7 +61,7 @@ class RentalServiceTest {
 
         assertEquals("Велосипед находится на обслуживании", exception.getMessage());
     }
-        @Test
+    @Test
     void testReturnBicycleSuccess() {
         Customer customer = new Customer(1, "Иван");
         Bicycle bicycle = new Bicycle(101, "Stels", BicycleStatus.AVAILABLE);

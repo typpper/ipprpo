@@ -1,5 +1,4 @@
 package by.ipprpo.rental.model;
-import java.util.Objects;
 
 public class Bicycle {
     private final int id;

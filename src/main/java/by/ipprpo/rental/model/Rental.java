@@ -1,7 +1,6 @@
 package by.ipprpo.rental.model;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 public class Rental {
     private final int id;

@@ -1,7 +1,5 @@
 package by.ipprpo.rental.model;
 
-import java.util.Objects;
-
 public class Customer {
     private final int id;
     private final String name;

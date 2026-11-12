@@ -8,6 +8,12 @@ pipeline {
                 bat 'mvn clean compile'
             }
         }
+        stage('Static Analysis') {
+            steps {
+                echo 'Этап Static Analysis: проверка кода Checkstyle'
+                bat 'mvn checkstyle:check'
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Этап Test: запуск тестов'
