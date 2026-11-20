@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import by.ipprpo.rental.Main;
 
 public class RentalService {
     private static final Logger LOG = LoggerFactory.getLogger(RentalService.class);
