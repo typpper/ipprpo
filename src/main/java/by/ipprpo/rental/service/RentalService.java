@@ -20,9 +20,7 @@ public class RentalService {
     }
 
     public Rental createRental(Customer customer, Bicycle bicycle) {
-        // ЭТО ОЧЕНЬ ДЛИННЫЙ КОММЕНТАРИЙ, КОТОРЫЙ ТОЧНО ПРЕВЫШАЕТ ЛИМИТ В 120
-        // СИМВОЛОВ И НАРУШАЕТ ПРАВИЛО CHECKSTYLE LINELENGTH. МЫ СПЕЦИАЛЬНО
-        // СДЕЛАЛИ ЕГО ТАКИМ ДЛИННЫМ ДЛЯ ЭКСПЕРИМЕНТА.
+        // ЭТО ОЧЕНЬ ДЛИННЫЙ КОММЕНТАРИЙ, КОТОРЫЙ ТОЧНО ПРЕВЫШАЕТ ЛИМИТ В 120 СИМВОЛОВ И НАРУШАЕТ ПРАВИЛО CHECKSTYLE LINELENGTH. МЫ СПЕЦИАЛЬНО СДЕЛАЛИ ЕГО ТАКИМ ДЛИННЫМ ДЛЯ ЭКСПЕРИМЕНТА.
         LOG.info("Запрос на создание аренды: клиент={}, велосипед={}", customer.getName(), bicycle.getModel());
 
         if (bicycle.getStatus() == BicycleStatus.RENTED) {
