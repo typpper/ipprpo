@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.LoggerFactory;
 
 public class RentalService {
     private static final Logger LOG = LoggerFactory.getLogger(RentalService.class);
@@ -20,7 +21,7 @@ public class RentalService {
     }
 
     public Rental createRental(Customer customer, Bicycle bicycle) {
-        // ЭТО ОЧЕНЬ ДЛИННЫЙ КОММЕНТАРИЙ, КОТОРЫЙ ТОЧНО ПРЕВЫШАЕТ ЛИМИТ В 120 СИМВОЛОВ И НАРУШАЕТ ПРАВИЛО CHECKSTYLE LINELENGTH.  ЭТО ОЧЕНЬ ДЛИННЫЙ КОММЕНТАРИЙ, КОТОРЫЙ ТОЧНО ПРЕВЫШАЕТ ЛИМИТ В 120 СИМВОЛОВ И НАРУШАЕТ ПРАВИЛО CHECKSTYLE LINELENGTH.
+
         LOG.info("Запрос на создание аренды: клиент={}, велосипед={}", customer.getName(), bicycle.getModel());
 
         if (bicycle.getStatus() == BicycleStatus.RENTED) {
