@@ -5,30 +5,24 @@
 <module name="Checker">
     <property name="severity" value="warning"/>
 
-    <!-- 1. LineLength и FileTabCharacter остаются на уровне Checker -->
     <module name="LineLength">
         <property name="max" value="120"/>
         <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
     </module>
     <module name="FileTabCharacter"/>
 
-    <!-- 2. Все проверки AST (Javadoc, именование, пробелы) переносим в TreeWalker -->
     <module name="TreeWalker">
-        <!-- Именование -->
         <module name="ConstantName"/>
         <module name="LocalVariableName"/>
         <module name="MethodName"/>
         <module name="PackageName"/>
 
-        <!-- Пробелы -->
         <module name="WhitespaceAround">
             <property name="allowEmptyConstructors" value="true"/>
         </module>
 
-        <!-- Импорты -->
         <module name="UnusedImports"/>
 
-        <!-- Javadoc -->
         <module name="JavadocMethod">
             <property name="accessModifiers" value="public"/>
             <property name="allowMissingParamTags" value="true"/>

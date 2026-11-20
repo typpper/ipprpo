@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Этап Build: компиляция'
-                bat 'mvn clean compile'
+                bat 'mvn clean compile -Dcheckstyle.skip=true'
             }
         }
         stage('Static Analysis') {
